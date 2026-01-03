@@ -3,156 +3,194 @@
 
 ## Overview
 
-This project presents a comprehensive **sales performance analysis for Blinkit**, focusing on revenue trends, customer satisfaction, and outlet-level performance.  
-The analysis integrates **SQL for data querying**, **Python for exploratory analysis**, and **Power BI for visualization** to generate actionable business insights.
+This project presents an **end-to-end sales performance analysis for Blinkit**, focusing on revenue trends, product performance, customer satisfaction, and outlet-level insights.
 
-The objective of this project is to evaluate key performance indicators (KPIs) and identify opportunities for optimization across products, outlets, and regions.
+The analysis follows a structured analytics workflow:
+- Business requirements definition
+- Data preparation and validation
+- KPI computation using SQL
+- Exploratory analysis using Python
+- Interactive visualization using Power BI
+
+The project is designed to demonstrate a complete analytics lifecycle aligned with real-world business use cases.
 
 ---
 
 ## Business Objective
 
-To analyze Blinkit’s sales data in order to:
-- Measure overall sales performance
-- Evaluate customer satisfaction using ratings
-- Understand outlet-level and location-based performance
-- Support data-driven decision-making through KPIs and dashboards
+The primary objectives of this project are to:
+- Evaluate overall sales performance
+- Analyze product categories and fat content impact on sales
+- Assess outlet-level and location-based performance
+- Measure customer satisfaction using ratings
+- Enable data-driven decision-making through KPIs and dashboards
+
+Detailed business requirements are documented in:
+```
+
+docs/business_requirements.md
+
+```
 
 ---
 
 ## Dataset Overview
 
-The dataset contains structured retail data, including:
-- Item attributes and categories
+The dataset contains structured retail sales data, including:
+- Item and product attributes
 - Fat content classification
-- Outlet characteristics (size, type, location, establishment year)
-- Sales values and customer ratings
+- Outlet characteristics (type, size, location, establishment year)
+- Sales values
+- Customer ratings
+
+The dataset files are available in the `Dataset/` directory.
 
 ---
 
-## Technology Stack
+## Analytics Workflow
 
-- **SQL:** Data cleaning, aggregation, KPI computation
-- **Python:** Exploratory data analysis and validation
-- **Power BI:** Interactive dashboard and visualization
-- **Domain:** Retail & E-commerce Analytics
+### 1. SQL Analysis
+SQL is used to perform:
+- Data cleaning and standardization
+- KPI computation
+- Aggregation across multiple dimensions such as item type, outlet size, and location
+
+The SQL analysis approach and logic are documented in:
+```
+
+docs/sql_analysis.md
+
+```
 
 ---
 
-## Data Preparation and Cleaning
+### 2. Python Analysis
+Python is used to:
+- Perform exploratory data analysis (EDA)
+- Validate KPI results derived from SQL
+- Analyze grouped trends and distributions
 
-Data quality improvements were applied before analysis:
-- Standardized `Item_Fat_Content` values  
-  (e.g., `LF`, `low fat` → `Low Fat`; `reg` → `Regular`)
-- Ensured categorical consistency for accurate grouping
-- Validated numeric and rating fields for KPI calculations
+The Python analysis methodology is documented in:
+```
 
-These steps improved consistency and reliability of analytical outputs.
+docs/python_analysis.md
+
+```
+
+---
+
+### 3. Power BI Dashboard
+Power BI is used to:
+- Build an interactive dashboard
+- Visualize KPIs and trends
+- Enable filtering and drill-down analysis
+
+The dashboard design and analytical logic are documented in:
+```
+
+docs/powerbi_dashboard.md
+
+```
+
+The Power BI file is available in:
+```
+
+powerbi/BlinkitDashboard.pbix
+
+```
 
 ---
 
 ## Key Performance Indicators (KPIs)
 
-The following KPIs were calculated:
+The following KPIs are evaluated in this project:
+- Total Sales
+- Average Sales
+- Number of Items Sold
+- Average Customer Rating
 
-- **Total Sales** – Overall revenue generated
-- **Average Sales** – Average revenue per transaction
-- **Number of Items** – Total count of items sold
-- **Average Rating** – Customer satisfaction indicator
-
----
-
-## Analytical Breakdown
-
-### Total Sales by Fat Content
-- Compared sales contribution of `Low Fat` and `Regular` items
-- Evaluated associated KPIs such as average sales and ratings
-
-### Total Sales by Item Type
-- Identified high-performing product categories
-- Ranked item types based on total sales
-
-### Fat Content by Outlet for Total Sales
-- Analyzed outlet-level sales segmented by fat content
-- Used pivot-based aggregation for comparison
-
-### Total Sales by Outlet Establishment Year
-- Evaluated sales trends across outlet establishment years
-
-### Percentage of Sales by Outlet Size
-- Measured revenue contribution of small, medium, and large outlets
-
-### Sales by Outlet Location
-- Assessed geographic sales distribution across locations
-
-### All Metrics by Outlet Type
-- Combined KPIs (sales, ratings, item count, visibility) by outlet type
-
----
-
-## Power BI Dashboard
-
-The Power BI dashboard includes:
-- KPI summary cards
-- Sales breakdown by item type and fat content
-- Outlet size and location-based analysis
-- Interactive filters and slicers for exploration
+These KPIs are analyzed across:
+- Item type
+- Fat content
+- Outlet type
+- Outlet size
+- Outlet location
+- Outlet establishment year
 
 ---
 
 ## Repository Structure
 
-```text
+```
+
 blinkit-sales-analysis/
 │
 ├── README.md
 │
+├── Dataset/
+│   ├── BlinkIT Grocery Data.csv
+│   ├── BlinkIT Grocery Data.xlsx
+│   └── BlinkIT_Data.csv
+│
+├── docs/
+│   ├── business_requirements.md
+│   ├── sql_analysis.md
+│   ├── python_analysis.md
+│   └── powerbi_dashboard.md
+│
 ├── sql/
-│   └── query_doc.sql
+│   ├── query_doc.sql
+│   └── Blinkit_SQL_Full_Analysis_With_Code_*.pdf
 │
 ├── python/
-│   └── blinkit_analysis.ipynb
+│   └── Blinkit analysis.ipynb
 │
 ├── powerbi/
 │   └── BlinkitDashboard.pbix
 │
-├── docs/
-│   └── business_requirements.md
-│
-├── Dataset/
-│
 ├── screenshots/
-````
+│
+└── README.md
+
+```
+
+---
+
+## Key Insights
+
+- Sales performance varies significantly across item categories and fat content
+- Outlet size and location have a strong impact on total sales contribution
+- Certain outlet types consistently outperform others
+- Customer ratings provide additional context for sales performance evaluation
 
 ---
 
 ## Key Learnings
 
-* Applied SQL for data cleaning and KPI computation
-* Used Python for exploratory analysis and result validation
-* Designed interactive Power BI dashboards for business insights
-* Translated business requirements into analytical metrics
-* Built an end-to-end analytics workflow
+- Translated business requirements into analytical KPIs
+- Applied SQL for structured data analysis and aggregation
+- Used Python for exploratory analysis and validation
+- Designed an interactive Power BI dashboard for business users
+- Built a complete analytics workflow from raw data to insights
 
 ---
 
 ## Usage
 
-This repository serves as:
-
-* A portfolio project for data analytics roles
-* A reference implementation for retail sales analysis
-* A demonstration of SQL, Python, and Power BI integration
+This repository can be used as:
+- A portfolio project for Data Analyst roles
+- A reference for retail and e-commerce analytics
+- A demonstration of SQL, Python, and Power BI integration
 
 ---
 
 ## Author
 
-**Satyaprakash Singh Yadav**
-Data Analytics | SQL | Python | Power BI
+**Satyaprakash Singh Yadav**  
+Data Analytics | SQL | Python | Power BI  
 
 ---
 
 ## Conclusion
 
-This project demonstrates a complete data analytics workflow—from data preparation and KPI computation to visualization and insight generation—supporting informed decision-making in a retail analytics context.
+This project demonstrates a complete and structured data analytics workflow, combining SQL-based analysis, Python validation, and Power BI visualization to generate actionable insights for retail sales performance.
